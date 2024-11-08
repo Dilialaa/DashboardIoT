@@ -6,7 +6,7 @@
     
 
     <!-- ====font===== -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,70 @@
 
 
     <title>Dashboard IoT</title>
-</head>
+    <style>
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
 
+        /* Container for toggle and title */
+        .topbar .left-section {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Spacing between toggle and title */
+        }
+        
+        .topbar .title h3 {
+            margin: 0;
+        }
+        
+        .topbar .right-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .topbar .notification-icon {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        
+        .topbar .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .topbar .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        
+        .topbar .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .topbar .profile-info .name {
+            font-weight: bold;
+        }
+        
+        .topbar .profile-info .email {
+            font-size: 0.85em;
+            color: grey;
+        }
+
+        .toggle {
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
 
 <body>
 
@@ -59,24 +121,32 @@
     </div>
 
     <div class="main">
-        <div class="topbar p-7">
-            <div class="toggle">
-                <i class="fa-solid fa-bars"></i>
+        <div class="topbar">
+            <div class="left-section">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="title">
+                    <h3>IoT DASHBOARD > <span style="color:grey">Config</span></h3>
+                </div>
             </div>
-            <div class="title">
-                <h3 >Dashboard IoT > <span style="color:grey">Config</span></h3>
+            <div class="right-icons">
+                <i class="fa-solid fa-bell notification-icon"></i>
+                <div class="profile">
+                    <img src="https://via.placeholder.com/30" alt="Profile Picture">
+                    <div class="profile-info">
+                        <span class="name">Admin</span>
+                        <span class="email">lorem@ipsum.com</span>
+                    </div>
+                </div>
             </div>
         </div>
-                
         @yield('content')
     </div>
 
-
-    
     <script src="{{ asset('script.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0sG1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
-
