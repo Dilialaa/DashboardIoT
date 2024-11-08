@@ -16,7 +16,7 @@
 
 
 <!-- =====================================FEATURES AND RULE======================= -->
-<div class="details flex flex-row m-lg-5">
+<div class="details m-lg-5">
     <div class="rule">
         <div class="cardHeader">
             <h4>Just Found 5 Feature(s)</h4>
@@ -82,28 +82,29 @@
 
             <!-- Formula Input Area -->
             <div class="formula-input">
-                <input type="text" placeholder="Feature 1 * (feature 2 * (2.1 + 3)) - 8 / feature 3" />
+                <input id="formulaInput" type="text" placeholder="Click on features or operators to build formula" />
             </div>
 
             <!-- Feature List and Operators -->
             <div class="formula-container">
                 <!-- Feature List -->
                 <div class="feature-list">
-                    <div class="feature-item">Feature 1</div>
-                    <div class="feature-item">Feature 2</div>
-                    <div class="feature-item">Feature 3</div>
-                    <div class="feature-item">Feature 4</div>
-                    <div class="feature-item">Feature 5</div>
-                    <div class="feature-item">Feature 6</div>
+                    <div class="feature-item" onclick="addToFormula('Feature 1')">Feature 1</div>
+                    <div class="feature-item" onclick="addToFormula('Feature 2')">Feature 2</div>
+                    <div class="feature-item" onclick="addToFormula('Feature 3')">Feature 3</div>
+                    <div class="feature-item" onclick="addToFormula('Feature 4')">Feature 4</div>
+                    <div class="feature-item" onclick="addToFormula('Feature 5')">Feature 5</div>
+                    <div class="feature-item" onclick="addToFormula('Feature 6')">Feature 6</div>
                 </div>
 
                 <!-- Operators -->
                 <div class="operators">
-                    <button class="operator-button">*</button>
-                    <button class="operator-button">+</button>
-                    <button class="operator-button">/</button>
-                    <button class="operator-button">-</button>
-                    <button class="operator-button">( )</button>
+                    <button class="operator-button" onclick="addToFormula('*')">*</button>
+                    <button class="operator-button" onclick="addToFormula('+')">+</button>
+                    <button class="operator-button" onclick="addToFormula('/')">/</button>
+                    <button class="operator-button" onclick="addToFormula('-')">-</button>
+                    <button class="operator-button" onclick="addToFormula('(')">(</button>
+                    <button class="operator-button" onclick="addToFormula(')')">)</button>
                 </div>
             </div>
 
@@ -156,6 +157,9 @@
         document.getElementById(tabName).classList.add('active');
         event.currentTarget.classList.add('active');
     }
-
+    function addToFormula(value) {
+        const input = document.getElementById('formulaInput');
+        input.value += value + ' ';
+    }
 </script>
 @endsection
