@@ -16,11 +16,11 @@
 body{
     min-height: 100vh;
     overflow-x: hidden;
-
+    background-color: var(--white);
 }
 
 .container-sidebar {
-    position: relative;
+    /* position: relative; */
     width: 100% ;
 }
 
@@ -191,7 +191,7 @@ body{
 
 .input-wrapper .input-text{
     border-radius: 22px !important;
-    width: 100% !important;
+    width: 104% !important;
     border: transparent;
     padding: 15px 0px 15px 10px !important;
     height: max-content;
@@ -215,7 +215,7 @@ body{
     position: absolute;
     right: 0;
     top: 17px;
-    left: 92.2%; 
+    left: 90%; 
     }
 
     .submit:hover{
@@ -271,8 +271,190 @@ body{
         justify-content: center;
         margin-bottom: 30px;
     }
-      
-.details .features {
+    .features {
+      background-color: var(--blueiot);
+      color: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+      position: relative;
+  }
+  .features .cardHeader h4 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Tabs styling */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tab-button {
+    background-color: #86A2D6;
+    color: var(--blueiot);
+    border: none;
+    height: 50px;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;  /* Only round top-left corner */
+    border-top-right-radius: 8px; /* Only round top-right corner */
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+
+.tab-button.active {
+    background-color: var(--white);
+    color: var(--blueiot);
+}
+
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    background: var(--white);
+    color: var(--blueiot);
+    padding: 20px;
+    border-bottom-left-radius: 8px;  /* Only round top-left corner */
+    border-top-right-radius: 8px;  /* Only round top-left corner */
+    border-bottom-right-radius: 8px; /* Only round top-right corner */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Dropdowns and button styles within the threshold section */
+.threshold-settings {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Dropdown container */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 200px; /* Adjust width as needed */
+}
+.dropdown-container2 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 200px; /* Adjust width as needed */
+}
+
+/* Dropdown styling */
+.dropdown-select {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #8c8c8c; /* Light gray color for placeholder text */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px; /* Rounded corners */
+  appearance: none; /* Remove default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  cursor: pointer;
+  font-family: "Poppins", sans-serif; /* Ensure font consistency */
+}
+.dropdown-select2 {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #8c8c8c; /* Light gray color for placeholder text */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px; /* Rounded corners */
+  appearance: none; /* Remove default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  cursor: pointer;
+  font-family: "Poppins", sans-serif; /* Ensure font consistency */
+}
+
+/* Custom arrow styling */
+.dropdown-container::after {
+  content: "▼"; /* Unicode for dropdown arrow */
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #86A2D6; /* Light blue color for arrow */
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+.dropdown-container2::after {
+  content: "▼"; /* Unicode for dropdown arrow */
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #86A2D6; /* Light blue color for arrow */
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+
+/* Remove focus outline for better aesthetics */
+.dropdown-select:focus {
+  outline: none;
+  border-color: #86A2D6; /* Optional: highlight border on focus */
+}
+.dropdown-select2:focus {
+  outline: none;
+  border-color: #86A2D6; /* Optional: highlight border on focus */
+}
+
+.indicator-button, .alert-button, .add-threshold-button {
+  padding: 30px; /* Adjust padding as needed for spacing */
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.indicator-button span{
+  margin: 20px;
+}
+
+.indicator-button:hover, .alert-button:hover, .add-threshold-button:hover {
+  background-color: #709ac1; /* Optional: Slightly darker color on hover */
+}
+
+.add-threshold-button {
+    margin-top: 15px;
+    background-color: #86A2D6;
+    color: var(--blueiot);
+    width: fit-content;
+}
+
+/* Save button styling */
+.save-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #86A2D6;
+    color: var(--blueiot);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: var(--white);
+    color: var(--blueiot);
+}
+.details{
         position:relative;
         display: grid;
         min-height: 500px;
@@ -308,9 +490,8 @@ body{
   outline: none;
 
 }
-
-.dropdown select {
-
+.tab-content h5{
+  font-weight: bold;
 }
 
 
@@ -409,4 +590,148 @@ body{
       overflow-x: auto;
     }
   }
+  /* General styling */
+#formula {
+  background-color: #ffffff;
+  padding: 20px;
+  /* border-radius: 15px; */
+  color: var(--blueiot);
+}
+
+/* Styled Dropdown */
+.styled-dropdown {
   
+  appearance: none; /* Remove default dropdown styling */
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none; /* Firefox */
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Fully rounded corners */
+  background-color: #ffffff;
+  color: #555;
+  font-size: 1rem;
+  width: 200px; /* Adjust width as needed */
+  cursor: pointer;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  text-align: left; /* Align text to the left */
+}
+
+/* Custom arrow styling */
+.styled-dropdown::after {
+  content: '▼'; /* Custom arrow */
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #435071; /* Darker color for arrow */
+  font-size: 1rem;
+  pointer-events: none; /* Make the arrow unclickable */
+}
+
+/* Additional styling to center the dropdowns */
+.container .row {
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Optional container styling for alignment */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+}
+
+
+#formula h5 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Formula input styling */
+.formula-input input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  outline: none;
+}
+
+/* Container for feature list and operators */
+.formula-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Feature list styling */
+.feature-list {
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.feature-item {
+  padding: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.feature-item:hover {
+  background-color: #e6e6e6;
+}
+
+/* Operator buttons styling */
+.operators {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.operator-button {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--blueiot);
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.operator-button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Save button styling */
+.save-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #86A2D6;
+  color: var(--blueiot);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.save-button:hover {
+  background-color: #709ac1;
+  color: var(--white);
+}
