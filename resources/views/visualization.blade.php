@@ -1,35 +1,32 @@
 @extends('main')
 
 @section('content')
-<div class="container text-center my-4">
+<div class="container my-4">
     <!-- Dropdowns Row -->
     <div class="row justify-content-center mb-4">
         <!-- Chart Dropdown -->
         <div class="col-auto">
-            <div class="dropdown">
+            <div class="dropdown-container">
                 <select class="styled-dropdown">
                     <option>Chart</option>
-                    <!-- Add options if needed -->
                 </select>
             </div>
         </div>
 
         <!-- Dimension Dropdown -->
         <div class="col-auto">
-            <div class="dropdown">
+            <div class="dropdown-container">
                 <select class="styled-dropdown">
                     <option>Dimension</option>
-                    <!-- Add options if needed -->
                 </select>
             </div>
         </div>
 
         <!-- Metric Dropdown -->
         <div class="col-auto">
-            <div class="dropdown">
+            <div class="dropdown-container">
                 <select class="styled-dropdown">
                     <option>Metric</option>
-                    <!-- Add options if needed -->
                 </select>
             </div>
         </div>
@@ -38,32 +35,41 @@
     <!-- First Row of Charts -->
     <div class="row">
         <!-- Bar Chart -->
-        <div class="col-md-6 mb-4">
-            <canvas id="barChart"></canvas>
+        <div class="card col-lg-5 col-md-11 m-3">
+            <div class="chart-card">
+                <canvas id="barChart"></canvas>
+            </div>
         </div>
 
         <!-- Line Chart -->
-        <div class="col-md-6 mb-4">
-            <canvas id="lineChart"></canvas>
+        <div class="card col-lg-5 col-md-11 m-3">
+            <div class="chart-card">
+                <canvas id="lineChart"></canvas>
+            </div>
         </div>
     </div>
 
     <!-- Second Row of Charts -->
     <div class="row">
         <!-- Area Chart -->
-        <div class="col-md-6 mb-4">
-            <canvas id="areaChart"></canvas>
+        <div class="card col-lg-8 col-md-11">
+            <div class="chart-card">
+                <canvas id="areaChart"></canvas>
+            </div>
         </div>
 
         <!-- Pie Chart -->
-        <div class="col-md-6 mb-4">
-            <canvas id="pieChart"></canvas>
+        <div class="card col-lg-3 col-md-11">
+            <div class="chart-card">
+                <canvas id="pieChart"></canvas>
+            </div>
         </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    // JavaScript code for initializing each chart
     // Bar Chart
     const barCtx = document.getElementById('barChart').getContext('2d');
     new Chart(barCtx, {
