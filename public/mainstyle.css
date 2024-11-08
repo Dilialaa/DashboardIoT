@@ -272,13 +272,14 @@ body{
         margin-bottom: 30px;
     }
     .features {
-      background-color: var(--blueiot);
-      color: white;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-      position: relative;
-  }
+    background-color: var(--blueiot);
+    color: white;
+    padding: 20px !important; /* Ensure padding is applied */
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    box-sizing: content-box; /* Override box-sizing to allow padding to extend */
+}
   .features .cardHeader h4 {
     font-weight: 600;
     font-size: 1.2rem;
@@ -459,7 +460,7 @@ body{
         display: grid;
         min-height: 500px;
         padding: 20px !important;
-        background: var(--blueiot);
+        /* background: var(--blueiot); */
         color: white;
         box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
         border-radius: 20px;
